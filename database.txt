@@ -1,0 +1,32 @@
+CREATE TABLE `phone_book`.`phonebook` (
+  `name` VARCHAR(20) NOT NULL,
+  `date_of_birth` DATE NOT NULL,
+  `phone_number` INT NOT NULL,
+  `email_id` VARCHAR(30) NOT NULL,
+  `optional_phone_number_1` INT NULL,
+  `optional_phone_number_2` INT NULL,
+  `optional_phone_number_3` INT NULL,
+  PRIMARY KEY (`phone_number`));
+
+INSERT INTO `phone_book`.`phonebook` (`name`, `date_of_birth`, `phone_number`, `email_id`, `optional_phone_number_1`) VALUES ('Vinny', '1999-07-10', '0000000000', 'xyz@gmail.com', '1111111111');
+INSERT INTO `phone_book`.`phonebook` (`name`, `date_of_birth`, `phone_number`, `email_id`, `optional_phone_number_1`) VALUES ('vin', '1999-08-10', '1010101010', 'xxx@gmail.com', '0101010101');
+
+ALTER TABLE `phone_book`.`phonebook` 
+ADD COLUMN `optional_email_id_1` VARCHAR(45) NULL AFTER `optional_phone_number_3`,
+ADD COLUMN `optional_email_i_2` VARCHAR(45) NULL AFTER `optional_email_id_1`;
+
+INSERT INTO `phone_book`.`phonebook` (`name`, `date_of_birth`, `phone_number`, `email_id`, `optional_phone_number_1`) VALUES ('Vinny', '1999-07-10', '0101010101', 'yyy@gmail.com', '0101010101');
+INSERT INTO `phone_book`.`phonebook` (`name`, `date_of_birth`, `phone_number`, `email_id`, `optional_phone_number_1`, `optional_email_i_2`) VALUES ('Vinnie', '1998-07-10', '2020202020', 'zzz@gmail.com', '0202020202', '');
+INSERT INTO `phone_book`.`phonebook` (`name`, `date_of_birth`, `phone_number`, `email_id`, `optional_phone_number_1`) VALUES ('Vinni', '1988-08-10', '303030303', 'xyz@gmail.com', '03030303');
+INSERT INTO `phone_book`.`phonebook` (`name`, `date_of_birth`, `phone_number`, `email_id`, `optional_phone_number_1`) VALUES ('Vinn', '1999-07-01', '111111', 'zyx@gmail.com', '04040404');
+
+ALTER TABLE `phone_book`.`phonebook` 
+CHANGE COLUMN `email_id` `email_id` VARCHAR(30) NULL ;ALTER TABLE `phone_book`.`phonebook` 
+CHANGE COLUMN `name` `name` VARCHAR(20) NULL ,
+CHANGE COLUMN `date_of_birth` `date_of_birth` DATE NULL ;
+
+ALTER TABLE `phone_book`.`phonebook` 
+ADD COLUMN `id` INT NULL AFTER `optional_email_i_2`;
+
+
+
